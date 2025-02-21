@@ -17,10 +17,10 @@ func routes(_ app: Application) throws {
     }
     
     app.get("heap") { req async throws -> String in
-        startHeapProfiling()
-        try await Task.sleep(for: .seconds(5))
-        dumpHeapProfile()
-        stopHeapProfiling()
+        // jemallocProfilerStart()
+        // try await Task.sleep(for: .seconds(5))
+        // jemallocProfilerStop()
+        jemallocProfilerDump(to: "jemalloc-runtime-profile.heap")
         return "Done!"
     }
 }
