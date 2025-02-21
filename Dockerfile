@@ -59,7 +59,8 @@ RUN swift build -c release \
         --product App \
         --static-swift-stdlib \
         -Xlinker -lprofiler \
-        -Xlinker -ljemalloc
+        -Xlinker -ljemalloc \
+        -Xswiftc -g
 
 # Switch to the staging area
 WORKDIR /staging
